@@ -1,0 +1,11 @@
+name: tonii-drugsystem
+version: '1.0-SNAPSHOT'
+main: io.github.toniidev.toniidrugsystem.Main
+api-version: '1.20'
+commands:
+  admingui:
+    usage: /<command>
+    description: Apre l'interfaccia admin
+  getdrops:
+    usage: /<command>
+    description: Prende gli oggetti non raccolti
