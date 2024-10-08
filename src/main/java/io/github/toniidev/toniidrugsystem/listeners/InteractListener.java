@@ -55,11 +55,14 @@ public class InteractListener implements Listener {
         MarijuanaPlant p = interacting.get((Player) e.getWhoClicked());
 
         if(e.getCurrentItem().isSimilar(Product.item)) {
-            ItemStack s = p.product;
-            s.setAmount(1);
-            e.getWhoClicked().getInventory().addItem(s);
-            e.getCurrentItem().setAmount(e.getCurrentItem().getAmount() - 1);
-            p.reduceAmountOfProduct(1);
+            if(e.getInventory().firstEmpty() != -1){
+                ItemStack s = p.product;
+                s.setAmount(1);
+                e.getWhoClicked().getInventory().addItem(s);
+                e.getCurrentItem().setAmount(e.getCurrentItem().getAmount() - 1);
+                p.reduceAmountOfProduct(1);
+            }
+            else ChatUtils.sendFullInventoryAlert((Player) e.getWhoClicked());
         }
         else if(e.getCurrentItem().getType().equals(Material.WATER_BUCKET)){
             if(p.getAmountOfProduct() != 64){

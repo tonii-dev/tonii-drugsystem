@@ -44,4 +44,8 @@ public class ChatUtils {
     public static void sendItemsToInventoryAlert(Player p){
         p.sendMessage("§e[BLOCCO] §aPiantina:§r Il prodotto della piantina è stato aggiunto al tuo inventario.");
     }
+
+    public static void sendFullInventoryAlert(Player p){
+        p.sendMessage("§e[BLOCCO] §aPiantina:§r Non è stato possibile aggiungere l'oggetto al tuo inventario: hai l'inventario pieno!.");
+    }
 }
